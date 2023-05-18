@@ -1,0 +1,93 @@
+token ssh de acceso ilimitado solo se pone una vez ssh-keygen 
+ramas
+
+el problema de la discrepancia entre ramas.. 
+por defecto el nombre es master, si uno no crea el git hub vacio sino con el readme, el git hub crea una rma main, vatias ramas, desde la creacion hay 
+cosas diferentes.... en la master se crea un archivo hola git, posteriormente se hace un comit -m"1" estos son las modificaciones posteriormente se hace
+un push al git hub,  hola mr git, hau un comit en git hub y hay un comit en el computador, es decit que hay commit en el pc con un commit secundario y lo 
+mismo con la plataforma git hub 
+hay formas de unir los commit, tanto los cambios en la plataforma como los cambios en el computador.
+
+hay opciones para unir los commit.
+
+nuevos comandos para crear y cambiar los nombres de las ramas
+
+git banch
+git branch nueva ramas
+
+accede a carpeta programacion: cd "carpeta"
+touch crea nuevo archivo
+
+git banch dice cuantas ramas hay y cuales
+
+git branch origin master "nombre" crea una rama con todo lo que tiene la rama actual
+git checkout "nombre" viaja a la rama seleccionada
+ 
+git log historial
+git log --oneline 
+
+git checkout -b "nombre" crea una nueva rama y lo lleva a ella
+git commit -m "A hola mundo desde test 2"
+git merge "nombre" actualiza e une dos archivos 
+
+         
+
+git congig --global init. defaultBranch main cambio de nombre de la rama desde hit
+ 
+git push origin "nombre de la rama"
+
+git log --oneline
+
+git commit -m mantener historial de lo que se hizo
+
+git branck -D "nombre de la rama" lo roba
+
+git checkout -b 
+
+el comando pull son dos comando unidos, git merge fusiona, git fetch origin master, trae los cambios
+a una rama oculta *origin/master*
+
+:wq ; q vuelve
+
+QUE ES UN FORK
+si no soy colaborador con un proyecto no puedo hacer modificaciones en el hit pero si puede descargarse
+al usarse un fork, es decir crear una copia para mi del repositorio que se quiere trabajar
+
+cuando yo hago una actualizacion a mi origin y deseo que se fusione con el upstream(el trabajo original)
+a través de un requerimiento de pull.
+
+se le hace el fork a la rama principal (main o master)
+
+ls <lista>
+
+para agregar nuevo pc autorizado
+
+git add origin
+
+git remote add origin "clave ssh" mi fork
+
+git remote -v
+
+git remote add upsteam "clave ssh" del original
+
+ls
+git pull upstream master  <descarga de la original>
+
+git ls -a lista de lo oculto
+
+git pull origin master <de mi folk>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,378 @@
+el método .split() es un método que se utiliza en cadenas de caracteres (strings) y sirve para
+ dividir una cadena en varias subcadenas utilizando un separador que se indica como argumento.
+ Por defecto, el separador es el espacio en blanco. Por ejemplo, si tienes la cadena "Hola como estas", 
+puedes usar el método .split() para 
+obtener una lista con las subcadenas separadas por espacio: ["Hola", "como", "estas"].
+
+
+zip no crea un diccionario, crea un objeto iterable de tipo zip que une dos o más listas en una secuencia
+ de tuplas. Sin embargo, se puede usar dict junto con zip para crear un diccionario a partir de las listas.
+
+sklearn
+keras
+pyforch
+
+{
+os.path.dirname(os.path.abspath(__file__)) como os.getcwd() se utilizan para obtener la ruta del directorio
+ actual en el que se encuentra el archivo de script. Sin embargo, hay una diferencia sutil entre los dos:
+
+os.path.dirname(os.path.abspath(__file__)): Esta expresión obtiene la ruta absoluta del archivo de script 
+actual mediante os.path.abspath(__file__), y luego obtiene el directorio padre de esa ruta utilizando
+ os.path.dirname(). Esto garantiza que obtienes la ruta completa del directorio que contiene el archivo de 
+script actual.
+
+os.getcwd(): Esta función simplemente obtiene el directorio de trabajo actual del proceso en ejecución.
+ Dependiendo de cómo se ejecute el script, este directorio de trabajo actual puede ser diferente a la 
+ubicación del archivo de script.
+
+}
+
+
+os.path.dirname() se utiliza para obtener el directorio padre de una ruta determinada.
+
+os.path.abspath(__file__) La "ruta absoluta" o "ruta completa" se refiere a la ubicación exacta de un 
+archivo o directorio en el sistema de archivos. Incluye toda la estructura de directorios desde la raíz 
+del sistema de archivos hasta el archivo o directorio en cuestión.
+
+
+df2 = pd.DataFrame(data2) Crea un DataFrame llamado df2 a partir del diccionario data2. 
+
+dataframe: Un DataFrame es una estructura de datos tabular bidimensional y mutable en la biblioteca pandas
+ de Python. Se puede pensar en un DataFrame como una tabla con filas y columnas.
+
+
+to_csv() es una función proporcionada por la librería pandas que se utiliza para guardar un DataFrame
+ en un archivo CSV.
+
+
+os.path.join() combina dos componentes de ruta y crear una ruta completa.
+
+ruta1 = os.path.join(directory, 'database1.csv') generará la siguiente ruta completa:
+
+	'C:/Users/Usuario/database1.csv'
+
+
+index permite controlar si se debe incluir la columna de índices en el archivo CSV o no. Al establecer
+ index=False, se indica que no se debe incluir la columna de índices en el archivo CSV resultante.
+
+
+df1 = pd.read_csv(file1) lee un archivo CSV y crea un DataFrame en pandas a partir de ese archivo.
+ El archivo CSV especificado por file1 se lee y se carga en el DataFrame df1. El DataFrame resultante
+ contendrá los datos estructurados del archivo CSV, lo cual permite realizar operaciones y análisis 
+posteriores en los datos.
+
+{
+utilizar la función pd.concat con el parámetro axis=1. Esto realizará una concatenación horizontal de
+ los DataFrames, alineando las filas y agregando valores NaN donde sea necesario.
+La línea de código merged_df = pd.concat([df1, df2], axis=1) se utiliza para unir dos DataFrames
+ horizontalmente.
+La función pd.concat() de pandas se utiliza para concatenar objetos a lo largo de un eje determinado, y
+ el parámetro axis especifica el eje a lo largo del cual se realizará la concatenación. 
+En este caso, axis=1 indica que se realizará una concatenación horizontal, es decir, se unirán los DataFrames 
+lado a lado.
+}
+
+Al realizar la unión de dos tablas utilizando la función pd.merge() en pandas, se añaden subfijos
+ "_x" y "_y" a las columnas que tienen el mismo nombre en ambas tablas para distinguirlas.
+ Sin embargo, si una columna solo existe en una de las tablas, no es necesario añadir un subfijo ya 
+que no hay ambigüedad.
+
+{
+Para correlacionar la "Tabla1" con la "Tabla2", necesitarás una columna en la "Tabla1" que actúe
+ como clave primaria y una columna correspondiente en la "Tabla2" que sea una clave externa,
+ relacionada con la clave primaria de la "Tabla1". Esta relación se establece mediante una columna que
+ contenga el mismo valor en ambas tablas, generalmente llamada "id" o "id_tabla1".
+
+
+Unnamed: 0_x | nombre_x | id_x | edad
+------------------------------------
+0            | Juan     | 1    | 25
+1            | Pedro    | 2    | 30
+2            | María    | 3    | 27
+4            | Ana      | 5    | 28
+3            | Luisa    | 4    | 23
+
+
+Unnamed: 0_y | id_y | nombre_y        | salario
+---------------------------------------------
+0            | 1    | Administrador   | 3500000
+1            | 2    | Contador        | 2900000
+2            | 3    | RH              | 3300000
+2            | 3    | RH              | 3300000
+3            | 4    | Ingeniero civil | 2600000
+
+Unnamed: 0_x | nombre_x | id_x | edad | Unnamed: 0_y | id_y | nombre_y        | salario
+-----------------------------------------------------------------------------------------
+0            | Juan     | 1    | 25   | 0            | 1    | Administrador   | 3500000
+1            | Pedro    | 2    | 30   | 1            | 2    | Contador        | 2900000
+2            | María    | 3    | 27   | 2            | 3    | RH              | 3300000
+2            | María    | 3    | 27   | 2            | 3    | RH              | 3300000
+4            | Ana      | 5    | 28   | 3            | 4    | Ingeniero civil | 2600000
+
+; 
+
+Unnamed: 0 | nombre | edad
+-------------------------
+0          | Juan   | 25
+1          | Pedro  | 30
+2          | María  | 27
+3          | Ana    | 28
+4          | Luisa  | 23
+
+Unnamed: 0 | nombre   | salario
+-------------------------------
+0          | Juan     | 3500000
+1          | Pedro    | 2900000
+2          | Carlos   | 3300000
+3          | Ana      | 2600000
+4          | Samantha | 4100000
+
+
+Unnamed: 0_x | nombre   | edad | Unnamed: 0_y | salario
+-----------------------------------------------------
+0            | Juan     | 25   | 0            | 3500000
+1            | Pedro    | 30   | 1            | 2900000
+3            | Ana      | 28   | 3            | 2600000
+
+
+}
+
+
+{
+tabla_merge[columna_1]: Accede a la columna columna_1 en la tabla combinada (tabla_merge).
+.values: Obtiene los valores de la columna como un array de NumPy.
+.reshape(-1, 1): Reshapea el array a una matriz de una sola columna, donde el número de filas se ajusta automáticamente (-1) y el número de columnas se establece en 1.
+
+	Reshapear se refiere a cambiar la forma o dimensiones de un array sin alterar sus elementos. 
+	Es una operación común en el procesamiento de datos y se utiliza para ajustar la estructura de 
+	los datos a diferentes requerimientos o análisis.
+
+	array es una estructura de datos que puede contener múltiples elementos del mismo tipo
+	 organizados en una o varias dimensiones.
+
+En el contexto del cálculo de coeficientes de regresión lineal, se utiliza .reshape(-1, 1)
+ para asegurarse de que la variable independiente X tenga una forma adecuada: una matriz con 
+una sola columna y un número de filas que se ajuste automáticamente según los datos disponibles.
+}
+
+
+En la tabla "empleados", el campo id_ocupacion representa la ocupación del empleado, y en la tabla 
+"ocupaciones", el campo id representa la ocupación en sí. Al tener valores coincidentes en el campo 
+id_ocupacion de la tabla "empleados" y en el campo id de la tabla "ocupaciones", es posible relacionar 
+los datos de ambas tablas mediante una operación de unión o combinación utilizando esos
+campos como clave de relación.
+
+
+ el tipo de datos "object" se refiere a una columna o variable que contiene valores de
+ tipo genérico o no específico
+
+
+{
+La función map() en Python es una función de orden superior que toma una función y un iterable 
+(como una lista, tupla o conjunto) como argumentos, y devuelve un nuevo iterable con la función
+aplicada a cada elemento del iterable de entrada.
+map(función, iterable)
+
+lista = [1, 2, 3, 4, 5]
+lista_doble = list(map(lambda x: x * 2, lista))
+print(lista_doble)  # Imprime: [2, 4, 6, 8, 10]
+
+
+def cuadrado(x):
+    return x ** 2
+numeros = [1, 2, 3, 4, 5]
+numeros_cuadrados = list(map(cuadrado, numeros))
+print(numeros_cuadrados)  # Imprime: [1, 4, 9, 16, 25]
+}
+
+{
+Una función lambda se utiliza para definir funciones pequeñas y simples en línea, sin la necesidad
+ de declarar una función por separado. Estas funciones suelen utilizarse en situaciones donde se requiere
+ una función rápida y temporal.
+lambda argumentos: expresion
+
+lambda: Palabra clave que indica que se está definiendo una función lambda.
+argumentos: Parámetros de la función separados por comas.
+expresion: La expresión que se evalúa y se devuelve como resultado de la función
+
+ejemplo
+cuadrado = lambda x: x ** 2
+resultado = cuadrado(5)
+print(resultado)  # Imprime: 25
+
+}
+
+
+
+{items
+.items() se utiliza en Python para obtener una vista iterable de pares clave-valor en un diccionario. 
+Retorna una secuencia de tuplas, donde cada tupla contiene dos elementos: la clave y el valor correspondiente.
+
+persona = {
+    'nombre': 'Juan',
+    'edad': 30,
+    'ciudad': 'México'
+}
+
+for clave, valor in persona.items():
+    print(clave, ':', valor)
+
+nombre : Juan
+edad : 30
+ciudad : México
+
+}
+
+La correlación es una medida estadística que indica la relación entre dos variables. El coeficiente de correlación puede tener un valor entre -1 y 1, donde:
+Un valor de 1 indica una correlación positiva perfecta, lo que significa que las dos variables están fuertemente correlacionadas en la misma dirección.
+Un valor de -1 indica una correlación negativa perfecta, lo que significa que las dos variables están fuertemente correlacionadas en direcciones opuestas.
+Un valor de 0 indica que no hay correlación entre las variables
+
+
+La matriz de correlación es una tabla o matriz que muestra los coeficientes de correlación entre múltiples
+ variables en un conjunto de datos. Es una forma conveniente de visualizar las relaciones de correlación
+ entre pares de variables.
+La matriz de correlación es una herramienta útil en análisis exploratorio de datos y modelado estadístico,
+ ya que proporciona información sobre las relaciones lineales entre variables y puede ayudar a identificar
+ patrones y dependencias en los datos. 
+
+
+
+sns.lmplot(data=tabla_merge_df, x=columna_1, y=columna_2, marker='D') 
+ # Utilizar 'D' para representar diamantes como marcadores
+		'o': Círculo
+'^': Triángulo hacia arriba
+'v': Triángulo hacia abajo
+'s': Cuadrado
+'p': Pentágono
+'*': Estrella
+'+': Cruz
+'x': Cruz en diagonal
+'D': Diamante
+'d': Diamante delgado
+'h': Hexágono horizontal
+'H': Hexágono vertical
+
+
+
+from sklearn.linear_model import LinearRegression 
+importando la clase LinearRegression del módulo linear_model de la biblioteca Scikit-learn (sklearn).|
+LinearRegression es una clase de scikit-learn que implementa el modelo de regresión lineal.
+
+{
+La estructura try-except permite capturar y manejar excepciones de forma controlada, evitando que el 
+programa se detenga abruptamente. En lugar de mostrar un mensaje de error por defecto, puedes personalizar 
+los mensajes de acuerdo con el tipo de excepción que ocurra. Esto facilita la depuración y proporciona una 
+experiencia de usuario más amigable
+
+-Exception: Es la clase base para todas las excepciones en Python. Captura cualquier tipo de excepción.
+-ZeroDivisionError: Se genera cuando se intenta dividir un número entre cero.
+-TypeError: Ocurre cuando se realiza una operación en un objeto de un tipo incorrecto.
+-ValueError: Se produce cuando una función recibe un argumento de tipo correcto pero con un valor incorrecto.
+-IndexError: Se genera cuando se accede a un índice de lista, tupla o secuencia fuera de rango.
+-KeyError: Ocurre cuando se intenta acceder a una clave que no existe en un diccionario.
+-FileNotFoundError: Se produce cuando se intenta acceder a un archivo que no se encuentra en la ruta especificada.
+-ImportError: Ocurre cuando se encuentra un error al importar un módulo o una función.
+-NameError: Se genera cuando se utiliza una variable o nombre no definido.
+-AttributeError: Ocurre cuando se intenta acceder a un atributo que no existe en un objeto
+}
+
+Un DataFrame es una estructura de datos bidimensional en pandas, que se asemeja a una tabla o una hoja de cálculo.
+
+
+
+
+La función pd.merge() en pandas se utiliza para combinar (unir) dos DataFrames en función de una o más columnas 
+comunes, similar a la operación de unión en SQL.pd.merge(left, right, on=None, how='inner')
+
+left y right son los DataFrames que se van a unir.
+on es el argumento opcional que especifica las columnas en las que se basará la unión. Si no se proporciona,
+ pd.merge() intentará unir los DataFrames utilizando las columnas con nombres coincidentes en ambos DataFrames.
+
+
+{
+ array de NumPy es una estructura de datos multidimensional que permite almacenar y manipular datos de 
+manera eficiente en Python. Un array de NumPy es similar a una lista, pero con la ventaja de ser más
+ eficiente en términos de memoria y rendimiento para operaciones numéricas y científicas.
+reshape() se utiliza para cambiar la forma de un array sin cambiar los datos que contiene. Permite
+ reorganizar los elementos del array en una nueva estructura con una cantidad diferente de filas y columnas.
+import numpy as np
+
+array_original = np.array([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12])
+array_reshape = array_original.reshape(-1, 1)
+
+print(array_reshape)
+
+[[ 1]
+ [ 2]
+ [ 3]
+ [ 4]
+ [ 5]
+ [ 6]
+ [ 7]
+ [ 8]
+ [ 9]
+ [10]
+ [11]
+ [12]]
+}
+
+
+
+{
+coeficiente_pendiente = regresion.coef_[0][0]
+-regresion: es el objeto de la clase LinearRegression que se ha ajustado previamente.
+-coef_ es un atributo de LinearRegression que contiene los coeficientes estimados del modelo.
+-[0][0] se utiliza para acceder al valor específico del coeficiente de pendiente
+
+La notación [0][0] se debe a que coef_ es una matriz bidimensional en la cual el primer índice [0] se
+ refiere a la fila y el segundo índice [0] se refiere a la columna. Dado que en el caso de la regresión
+ lineal simple solo hay un coeficiente de pendiente, se accede a él con [0][0].
+}
+
+
+
+regresion.intercept_[0] extrae el coeficiente de intercepción estimado del objeto LinearRegression y lo
+ asigna a la variable coeficiente_intercepto.
+intercept_ es un atributo de LinearRegression que contiene el coeficiente de intercepción estimado del modelo.
+[0] se utiliza para acceder al valor específico del coeficiente de intercepción
+
+
+
+split() se utiliza para dividir una cadena en una lista de subcadenas, utilizando un carácter o una secuencia
+ de caracteres como separador.
+
+
+
+{
+
+items() en un diccionario, devuelve un objeto de tipo dict_items que contiene los pares clave-valor
+ del diccionario. 
+diccionario = {"nombre": "Juan", "edad": 25, "ciudad": "Madrid"}
+
+items = diccionario.items()
+
+for clave, valor in items:
+    print(clave, "=", valor)
+
+resultado
+
+nombre = Juan
+edad = 25
+ciudad = Madrid
+
+}
+
+
+
+plano = fig.add_subplot(111, projection='3d') crea un nuevo conjunto de ejes en una figura existente 
+y configura el tipo de proyección como 3D.
+
+fig: Es la figura en la que se desea agregar los ejes. Es la figura que has creado previamente utilizando fig = plt.figure().
+add_subplot(): Es un método de la figura (fig) que se utiliza para agregar ejes a la figura.
+111: Este argumento define la disposición de los ejes en la figura. El número 111 se descompone en tres dígitos: 1 representa el número de filas, 1 representa el número de columnas y 1 representa el índice del conjunto de ejes. En este caso, se crea una única fila y una única columna, y el conjunto de ejes tiene un índice de 1.
+projection='3d': Este argumento configura el tipo de proyección de los ejes como 3D. Esto indica que los gráficos trazados en estos ejes se representarán en un espacio tridimensional.
+
+En resumen, la línea de código plano = fig.add_subplot(111, projection='3d') crea un conjunto de ejes 
+3D en la figura existente fig
+ y asigna estos ejes a la variable plano para su posterior uso en la trazado de gráficos en 3D.

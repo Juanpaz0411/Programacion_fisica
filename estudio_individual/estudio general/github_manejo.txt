@@ -1,0 +1,344 @@
+Windows carpetas, en unix se llaman directorios. En Unix entra MAC y Linux.
+Carpetas ocultas inician nombre con un punto "." Ej: ".Archivo" es carpeta oculta, a no ser que en linux se de opcion de mostrar, en mac directamente no se muestran
+
+Comandos de BASH
+ls: Lista de archivos
+cat / less: Lista el contenido de un archivo sin tener que abrirla
+vim: Editor de texto. Muy util, pero, navegar por el documento es dificil. Esta desarrollado para programar por la posicion de los dedos al momento de escribir, puede ser dañino para la mano ademas de tiempo que se pierde escribiendo. Se maneja con JKLH
+pwd: Directorio actual. Permite conocer el direcotrio en el que se esta
+cd: Navega entre directorios. Para el directorio anterior es "cd.."
+touch: Crear archivo si no está. Si ya existe no hace nada
+rm: Borrar
+cp: Copiar Ej "cp -Archivo- ../Repositorio/Clase_1.pdf"
+mv: Mover
+mkdir: Crear directorios
+-a / -r: Opciones para crear, "a" para todo y "r" para ser recursivo. Ej "ls -a" Lista de archivos y ademas los ocultos
+clear: Limpiar
+
+Con flecha hacia arriba aparecen comandos anteriores
+Con tabulador completa palabras, sugiere opciones disponibles. 
+
+Git
+Sistema de manejo de versiones. Manejar diferentes versiones de una serie de documentos. Sistema de archvios distribuidos.
+Protocolo SSH: Método seguro para acceder a servidores remotos. Además de controlar la otra máquina. No vamos a ver SSH porque la Universidad lo tiene bloqueado debido a que es un sistema de comunicación muy segura, no permite que cualquiera abra un puerto seguro sin supervisión.
+Repositorio: Carpetas del proyecto que son manejadas por GIT, o sea, el control de distintas versiones.
+Fork: La copia de un repositorio con seguimiento del mismo.
+Clone: Descargar un repositorio.
+Pull Request: Requerimiento que se le hace al dueño del repositorio para que modifique algo del mismo.
+Hooks/Actions: Tareas que se ejecutan de forma automática después de ejecutar determinado comando.
+
+GitHub
+Uno de tantos sistemas que manejan Git en línea, es de microsoft. Está la versión de amazon, etc.
+
+Descargar Git y opción Git Bash    
+
+
+
+
+
+
+
+
+
+
+ventajas de usar git hub:
+-podemos hacer multiples versiones de un documento y viajar en el tiempo con todas las versiones de nuestro
+documento.
+-podemos tener mas orden en las versiones de nuestro documento a través de los commits.
+en git hay tres estados
+-working directory: editamos y trabajamos en nuestros proyectos
+-staging area: decidimos que estados estan listos para pasar a nuestro git.
+-repository: registro de todo lo que hicimos a través de los commit.
+
+INICIO
+
+git remote add origin 
+
+git --version <nos dice la versión de nuestro git>
+
+al abrir el git bash se usa 
+git config --global user.name "nombre" <con esto le decimos nuestro nombre al git>
+git config --global user.name <nos dice nuestro nombre>
+git config --global user.name"nuevo nombre" <nos permite cambiar nuestro nuevo nombre>
+git config --global user.email "email@user.me" <nos permite ingresar nuestro email>
+git config --global user.email <nos permite ver nuestro email>
+git config --global core.editor "code --wait" <le dice a nuestro git que vs code es nuestro edcitor de texto por defecto>
+		la opcion <--wait> es para que la terminal se quede esperando a que cerremos nuestro editor de texto
+
+git config --global --list <nos permite ver nuestras configuraciones>
+
+cuando hay dos personas trabajando en el mismo proyecto pero en sistemas operativos diferentes, en windows cuando se agrega un salto de
+linea se usa <carret retonr: o "cr" y tambien line feed "lf"> en caso de trabajar con linux solo se usa <lf>, si esta en linuz y quiere subir 
+codigo tendra que eliminar <cr> y si quiere descargar codigo agrega <cr> para eso se cambia config de git usando core.autocrlf debe tener
+valor en true, de lo contrario no se esta agregando el caracter especial. al subirlo git no hace nada sobre el codigo.
+ la propiedad autocrlf debe tener imput para configurar los saltos de linea.
+
+git config --global core.autocrlf true <true se agrega tru e para mac se agrega input>
+
+git config -h <nos entrega un listado de todas las configuraciones y opciones posibles a usar>
+
+git config --global -e <archivo de configuracion global>
+
+
+COMANDOS DE GIT
+primer comando a utilizar es <ls> nos da un listado de todas las carpetas en un determinado directorio
+
+para saber en que carpeta o directorio estan se usa <pwd>
+
+el primer comando para poder movernos entre las carpetas usamos <cd "nombre carpeta">, carpetas vistas en <ls>
+ 
+para salir del directorio y devolvernos uno atras en la gerarquia usamos <cd ..>
+
+para crear un nuevo directorio donde estara todo el codigo de nuestra app desde la terminal del git bash
+	usamos <mkdir "nombre del nuevo directorio">
+
+luego de ingresar en el directorio que va a almacenar todo el proyecto inicializamos usando <git init> esto indica
+que creo un nuevo repositorio y dice en donde, normalmente aparece con <.git> el punto significa que es un directorio 
+	oculto, para poder verlo usamos <ls -a> muestra todo incluyendo los ocultos
+
+al acceder al .git damos ls -a para ver todos los archivos usados para poder gestionar los proyectos, aqui se almacenan
+las versiones y ramas del codigo, commit y demas.
+
+mi repositorio esta en  'USUARIO WINDOWS'/programacion/miweb
+
+rm -rf "nombre de carpeta" <nombre de la carpeta>
+
+FLUJO DE TRABAJO EN GIT
+cuando estemos en el pc podemos modificar archivos, pero aun no estan agregados en un repositorio, usamos
+	<git add> con esto seleccionamos los archivos que queremos pasar a etapa stage;aun no esta en el 
+	repositorio, esto indica solo los cambios que hemos realizado.
+cuando pasamos la étapa stage y tenemos los archivos que queremos pasar eventualmente, usamos <git commit>
+	cuando lo usamos, se crean los archivos commit.
+los cambios que hemos comprometido los podemos pasar a la nube usando <git push> para enviar a la nube.
+si queremos eliminar un archivo usamos <git add> a la etapa stage, commit y posteriormente a la nube y borrarlo.
+
+
+
+PRIMER TRABAJO
+<code .> el punto abre la carpeta donde estamos parados usando el visualcode o el visualizador usado.
+
+abrimos la carpeta miweb(donde esta el repositorio) 
+
+agregamos archivo.(java,httml, en este caso txt) luego de agregado podemos volver a nuestra terminal
+	<git status> nos dice el estado de la terminal seleccionada(en este caso el estado del repositorio)
+		cuando hay cambios nos indica si hay commit o si hay untracked files(archivos que git no sigue) git no sigue todo
+		hay que seleccionar con 
+			git add "nombre de archivo" <agrega el archivo seleccionado>
+			git add *.txd <agrega todos los archivos con extension txt en untracked files>
+			git add . <agrega absolutamente todos los archivos en untracked files>
+			git add archivo1.txt archivo2.txt <agregar dos archivos a la vez>
+git add y posteriormente gitt status muestra archivos comprometidos a ser subidos(verde)
+
+si luego se git add se hace un cambio el git no sigue ese cambio y hay que agregar el nuevo archivo
+ 
+hay dos formas te comprometer-commit nuestros archivos:
+	git commit -m "algo con sentido, que se hizo" <se comprometen cambios>
+
+al agregar un nuevo commit y colocamos <git status> en el editor colocamos "texto que indique lo agregado"
+y se cierra la pestaña. esto indica el texto y que se cambio o se incerto.
+
+
+ 
+ELIMINAR ARCHIVOS DEL REPOSITORIO
+rm "nombre del archivo" <elimina el archivo de la carpeta>
+
+git rm "archivo borrado" <elimina el archivo y lo sube a stage>
+
+git restore --staged "nombre de archivo"<nos permite quitar el cambio de la etapa stage>
+
+git restore "nombre del archivo" <para recuperar el archivo eliminado o descartar los cambios>
+
+MOVER ARCHIVO O CAMBIAR EL NOMBRE
+mv "nombre inicial" "nombre final"<mover archivos> 
+luego de agregar cambios hay que agregarlos a staget
+
+git mv "nombre inicial" "nombre final" <realiza el cambio y agrega de forma rápida a staged>
+
+
+
+IGNORANDO ARCHIVOS Y REPOSITORIOS.
+cuando se tienen archivos especificos solo para nuestra maquina. cuando queremos mantener un archivo sin que este se suba por error y ademas esto sea configurable y tener clave
+
+si queremos colocar algunas variables de configuracion, se configura en vscode y se crea un archivo <.env> el cual es estandar para variables de entorno
+	en la terminal al dar git status, aparece .env sin seguimiento, para evitar subir a staged hacemos un nuevo archivo llamado <.gitignore> y aqui se 	
+	especifican cuales son los archivos y rutas que no queremos que se envien al repositorio, esto en cada linea del archivo, ejempli<.env>, tambien se 
+	puede indicar carpetas a ignorar<"nombre de carpeta"\>, luego en la terminal no apareceran los archivos, pero si el .gitignore, este .gitignore se 
+	agrega a staged y se agrega el commit<git comit -m"texto">
+
+
+
+TIP, MEJOR GIT STATUS.
+aparece mucha información, al abrir el editor y realizar modificaciones en el documente seguido
+	git status -s <de forma conpacta muestra lo de git status>
+		 ?? significa que no ha sido agregado a staged
+		 M dice cual ha sigo modificado
+
+git help <aparece un listado de las funciones y lo que hacen>
+
+
+
+VISUALIZANDO LOS CAMBIOS
+para ver los cambios realizados de una forma mas "visual":
+git diff<nos dice de forma detallada lo que se hizo con los nuevos cambios que todavia no estan en staged>
+	esta vacio cuando no hay cambios
+git diff --staged <esto dice que cambios estan en la etapa staged>
+
+
+VIENDO HISTORIAL
+git log<aparece mucha informacion, quien configura, que cambio, correo, mensaje de commit> salimos de aqui con "q" y navegamos con "espacio"
+
+git log --oneline<nos muestra un historial de los commits guardados con los mensajees o nombres con lo que se guardo>
+
+
+
+RAMAS EN GIT O BRANCHES
+cada que realizamos un cambio podemos dejar la rama principal y devolvernos a la misma luego de realizar los cambios, al final cuando terminamos de organizar
+los cambios en la rama secundarios podemos fusionar con la rama principal.
+
+git estatus < muestra el estado actual de los archivos en el repositorio,>\
+
+git restore --staged "nombre" <quita los cambios de los archivos que se han agregado al área de preparación (staging area)>
+
+git restore "name" <deshace los cambios realizados en un archivo y los reemplaza con la última versión registrada en el repositorio.>
+
+ git branch -m <nombre_actual> <nuevo_nombre>. Este comando cambia el nombre de la rama actual o de la rama especificada en <nombre_actual>
+
+git branch <antes de crear una rama hay que verificar la rama en la que se esta trabajando, por defecto main es la rama principal>
+
+git checkout -b "nombre de la rama" <asi creamos una rama nueva> luego indica a que rama nos hemos cambiado
+	ahora se pueden realizar cambios en los archivos.
+
+	luego de verificar que esta en la rama nueva, en esta se pueden subir los cambios, hacerlos commit y posteriormente mirar el historial.}
+
+cat "nombre archivo" <muestra el contenido de nuestro archivo>
+
+si se cambia de rama a la rama normal, no estan los cambios de la otra rama.
+
+git checkout "nombre" <nos deja desplazarnos entre ramas>
+
+git checkout <Si deseas volver a la última rama en la que trabajaste, puedes utilizar el comando sin argumentos >
+
+git merge "rama de los que se traen cambios"<trae los cambios de una rama a otra, <es necesario estar en la rama a la que se le quiere traer la otra>
+
+git checkout -b <sirve para crear una rama>
+
+git checkout -d <sirve para crear una rama>
+
+git branch -d "nombre rama" <elimina una rama que ya esta fusionada>
+
+git branch -D "nombre rama" <elimina la rama, forzando el Delete>
+
+git branch -d "nombre_de_rama" <elimina una rama que ya esta fusionada>
+
+git push --delete "nombre_de_rama"<elimina del git en linea>
+
+git branch -r <muestra las ramas remotas>
+
+CONECTANDO CON GIT HUB
+creamos el git hub sin checkear nada 
+ 
+git remote add origin git@github.com:Juanpaz0411/Programacion_fisica.git <esto indica si hay un servidor remoto, add origin indica de donde se consigue 
+	el codigo y a donde se envia>esto hace el add origin y la fuente
+
+git push -u origin "main" <comando para subir los cambios con respecto a la rama en la que se este trabajando, se crea con -u, origin dice donde queremos
+	que sea creada>
+
+creamos git add, agregamos un comit y finalmente
+	git push <toma todos los cambios y los sube>
+
+podemos subir una nueva rama
+	git push -u origin ramac <se crea una rama nueva en el repositorio>
+
+
+git push "nombre del repositorio remoto" --delete "nombre de la rama" <elimina una rama del repositorio>
+
+INICIAR REPO.
+
+git init <para empezar nuevo repositorio hacer> 
+
+git push -u origin main
+
+DESHACERE CAMBIOS
+
+git reset --soft: Con esta opción, se puede deshacer los últimos commits pero mantener los cambios en el área de preparación.
+
+git reset --mixed: Esta opción es la predeterminada y permite deshacer los últimos commits y también deshacer los cambios en el área
+ de preparación, lo que significa que los cambios se devuelven al área de trabajo.
+
+git reset --hard: Con esta opción, se pueden deshacer los últimos commits y también descartar todos los cambios posteriores, incluidos los 
+cambios en el área de trabajo. Esto es útil si se quiere volver completamente a un estado anterior y descartar todos los cambios posteriores.
+
+clear: limpia todo
+NOTA:SI HAY PROBLEMAS EJECUTAR COMO ADMIN....
+
+pip install numpy <libreria para algebra lineal>
+
+pip install "nombre de libreria" <se descarga una libreria>
+
+pip install --uprade <para actualizar pip>
+
+README.txt es un archivo que siempre debe estar en el repositorio
+
+
+USO DE VS CODE.
+
+creamos un carpeta nueva para configurarla como repositorio desde vs code.
+
+creamos un archivo  requirements.txt <aca colocamos el nombre de todas las librerias que necesitamos>
+
+lo modificamos y creamos un commit en la opcion de ramas. posteriormente aparece la opcion de crear repositorio y se crea.
+
+agregamos un staged con la opcion del "+" al lado del archivo visualizado en el vs code. 
+
+posteriormente agregamos el commit 
+
+pip install -r requirements.txt <descarga las carpetas en requirements.txt 	>esto se puede desde el vs en las opciones en terminal/nueva terminal
+es como usar git en vs code
+
+pip freeze <muestra que librerias tiene>.
+
+cuando haceos un archivo requiremet.txt nos acordamos de cada uno o abrimos git bash y le dan < pip freeze>requiremets.txt > le hace un archivo requirements.txt con las 
+bibliotecas que tiene y puede borrar las bibliotecas del archivo requirements.txt.
+
+pip unistall "nombre de la libreria"<borra una libreria>
+
+
+
+PATH <es una de las variables de entorno, path significa camino, referencia al camino a tomar.>
+
+variables es una asignacion a algunas funciones.
+
+en <intertaiment variables> nos Gdice que variables de entorno hay, a traves de pyhon podemos acceder a dichas variables.
+
+ENTORNO VIRTUAL, da ordenes en el pc para buscar bibliotecas, o usar carpetas que se le indiquen.
+	la carpeta entorno virtual agregar al .gitignore	
+
+CREAR ENTORNO VIRTUAL:
+python -m venv "env cualquier nombre, es la ubicacion de las variables de entorno"<le dice en que fijarse, que usar>
+ACTIVARLO
+source "ENV"/Scripts/activate
+.gitignore y agregamos 
+
+wich python <desde donde estoy usando python>
+rm -rf borrar
+
+pip install --upgrade pip<atualiza en pip>
+
+math<operaciones matematicas muy basicas>
+
+pip install scipy<cientific python>
+
+sympy<calculos simbolicos>
+
+pip install numpy<liberia algebra lineal>
+
+.bashrc<ordenes personalizadas>
+
+sintaxys de markdwon
+
+
+
+
+
+
+
