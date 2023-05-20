@@ -1,3 +1,4 @@
+#realizado en clase, en conjunto.
 class Vector:
     def __init__(self, x, y, z):
         self.x = x
@@ -169,4 +170,3 @@ elif pregunta == 2:
 else:
   print("Número no válido")
 
-  #realizado en clase, en conjunto.
