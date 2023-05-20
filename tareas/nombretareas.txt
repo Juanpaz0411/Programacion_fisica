@@ -1,3 +1,5 @@
+algunas tareas estaban hechas hace tiempo pero no habian sido subidas por que les faltaba ser pulidas.
+
 1. aplicacion producto vectorial
 2. codicionales, edad
 3. manejo de base de datos
