@@ -15,9 +15,15 @@ class Animal:
     clase principal que describe nombre del animal
     '''
     def __init__(self, nombre):
+        '''
+        Constructor de la clase animal, recibe como argumentos el nombre del animal
+        '''
         self.nombre = nombre
     
     def hacer_sonido(self):
+        '''
+        este método indica que el animal hace un sonido cualquiera.
+        '''
         print("El animal hace un sonido.")
 
 class Perro(Animal):
@@ -26,6 +32,10 @@ class Perro(Animal):
     recibe como argumento la raza de el perro.
     '''
     def __init__(self, nombre, raza):
+        '''
+        Este método usa el constructor de la clase inicial Animal y se modifica agregandole que reciba como argumentos
+        nombre y raza, este ultimo fue el agregado al constructor original.
+        '''
         super().__init__(nombre)
         self.raza = raza
     #    La llamada super().__init__(nombre) en el ejemplo se refiere a la invocación del constructoR...
@@ -34,6 +44,9 @@ class Perro(Animal):
     #    ...clase derivada.
 
     def hacer_sonido(self):
+        '''
+        hace referencia a que el perro que subclase de Animal hace un sonido, especificamente ladra.
+        '''
         print("El perro ladra.")
 
 class Gato(Animal):
@@ -42,10 +55,17 @@ class Gato(Animal):
     recibe como argumento la raza de el gato.
     '''
     def __init__(self, nombre, color):
+        '''
+        Este método usa el constructor de la clase inicial Animal y se modifica agregandole que reciba como argumentos
+        nombre y color, este ultimo fue el agregado al constructor original.
+        '''
         super().__init__(nombre)
         self.color = color
     
     def hacer_sonido(self):
+        '''
+        hace referencia a que el gato que subclase de Animal hace un sonido, especificamente maulla.
+        '''
         print("El gato maulla.")
 
 # Crear instancias de las clases derivadas
