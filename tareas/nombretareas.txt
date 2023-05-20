@@ -1,0 +1,11 @@
+1. aplicacion producto vectorial
+2. codicionales, edad
+3. manejo de base de datos
+4. modificaciones en clase de matriz
+5. puntuacion, cambiar tildes
+6. torres de hanoi
+7. taller python funcional
+8. tarea herencia
+
+
+
