@@ -1,19 +1,20 @@
-def hanoi(n, origen, destino, auxiliar):
-    '''
-    mueve los discos de la torre A uno a uno hasta que todos quedan apilados en orden de 
-    tamaño en la torre c.
-    '''
+#el programa fue realizado de forma grupal
+
+def move_disk(n, source, target):
+    print(f"Mueve el disco {n} de la torre {source} a la torre {target}")
+
+def hanoi(n, source, target, auxiliary):
     if n == 1:
-        print(f"Mueve el disco 1 de {origen} a {destino}")
+        move_disk(1, source, target)
     else:
-        hanoi(n-1, origen, auxiliar, destino)
-        print(f"Mueve el disco {n} de {origen} a {destino}")
-        hanoi(n-1, auxiliar, destino, origen)
+        hanoi(n-1, source, auxiliary, target)
+        move_disk(n, source, target)
+        hanoi(n-1, auxiliary, target, source)
 
 print("Torre de Hanoi")
 while True:
     try:
-        discos = int(input("¿Con cuántos discos quiere jugar? "))
+        discos = int(input("¿Con cuántos discos quieres jugar? "))
         if discos <= 0:
             print("El número de discos debe ser mayor que cero")
         else:
@@ -25,5 +26,5 @@ print(f"Comenzando el juego con {discos} discos")
 print("Los movimientos a realizar son:")
 hanoi(discos, "A", "C", "B")
 
-#el programa fue realizado de forma grupal
+
 
